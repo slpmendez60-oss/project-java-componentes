@@ -1,18 +1,35 @@
-## Getting Started
+# Project Java Componentes Vehiculares
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este proyecto implementa un conjunto de clases en Java que representan los componentes principales de un vehiculo. El objetivo es aplicar principios de programacion orientada a objetos como encapsulacion, modularidad y reutilizacion.
 
-## Folder Structure
+## Clases implementadas
 
-The workspace contains two folders by default, where:
+El sistema esta compuesto por las siguientes clases:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- **Vehiculo**: informacion general como placa, marca y modelo.
+- **Motor**: tipo de motor, cilindrada y potencia.
+- **Transmision**: tipo de transmision, numero de marchas y traccion.
+- **Chasis**: tipo de chasis, dimensiones y peso.
+- **Neumatico**: marca, tamano y presion.
+- **SistemaElectrico**: bateria, luces y sensores.
+- **SistemaFrenos**: tipo de frenos, discos, ABS y estado.
+- **RegistroVehicular**: datos del registro legal del vehiculo.
+- **Mantenimiento**: historial de mantenimientos realizados.
+- **Sensor**: representa un sensor individual del vehiculo.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Relaciones entre clases
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- La clase **Vehiculo** puede contener objetos como Motor, Transmision, Chasis, Neumaticos, SistemaElectrico y SistemaFrenos.
+- La clase RegistroVehicular se asocia a un Vehiculo.
+- La clase Mantenimiento puede almacenar un historial ligado al Vehiculo.
+- Los sensores hacen parte del sistema electrico.
 
-## Dependency Management
+## Ejecucion del programa
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Para probar el funcionamiento del proyecto se crea un archivo `Main.java` donde se instancian las clases y se muestran sus valores por consola.
+
+Ejemplo de creacion de un vehiculo:
+
+```java
+Vehiculo v = new Vehiculo("ABC123", "Toyota", "Corolla", 2020);
+System.out.println("Vehiculo creado: " + v.getMarca() + " " + v.getModelo());
